@@ -20,7 +20,7 @@
 
 1. **リポジトリをクローンする**
    ```bash
-   git clone [リポジトリのURL]
+   git clone https://github.com/nishikina/work3.git
    ```
 
 2. **データベースのセットアップ**
