@@ -1,0 +1,92 @@
+ 
+/* エラーメッセージのスタイル */
+.error-message {
+  display: block; /* ブロック要素として表示 */
+  font-size: 90%;
+  color: red;
+}
+
+body {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #94937A;
+  padding: 20px;
+  border-radius: 10px;
+  color: #2E492F;
+}
+
+/* CSS/testform.css */
+
+#myForm {
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #f1f1f1;
+  position: relative;  /*親要素を相対位置指定にする */
+  z-index: 9999; /* フォームを前面に表示 */
+}
+
+.form-logo {
+  position: fixed; /* 画像を固定位置にする */
+  bottom: 10px;
+  right: 10px;
+  width: 150px; /* 幅を指定 */
+  height: auto; /* 高さは自動調整 */
+  z-index: 0; /* ロゴを背面に表示 */
+}
+
+@media screen and (max-width: 1120px) {
+  body {
+    position: relative; /* 相対位置指定 */
+    min-height: 100%; /* 最低高さを100%に設定 */
+    padding-top: 150px; /* フォームの上部にマージンを追加 */
+  }
+
+  #myForm {
+    margin-top: 50px; /* フォームの上部にマージンを追加 */
+    position: relative; /* 相対位置指定 */
+    z-index: 9999; /* フォームを前面に表示 */
+  }
+
+  body::before {
+    content: ""; /* 擬似要素を使用して背景画像を設定 */
+    position: absolute; /* 画像を絶対位置にする */
+    top: 0; /* bodyの上部に配置 */
+    left: 0;
+    width: 100%; /* 幅を100%に設定 */
+    height: 150px; /* 高さを指定 */
+    background-image: url(../item/logo.jpg); /* ロゴ画像のパスを指定 */
+    background-size: contain; /* 画像を可能な限り大きく表示 */
+    background-repeat: no-repeat; /* 画像の繰り返しを無効にする */
+    background-position: center top; /* 画像を中央寄せにして上部に配置 */
+    z-index: 0; /* ロゴを背面に表示 */
+  }
+
+  .form-logo {
+    display: none; /* 画面幅が1120px以下の場合、ロゴを非表示にする */
+  }
+}
+
+
+
+
+
+
+button[name="send"] {
+  display: inline-block;
+  margin-top: 20px; /* 適切なマージンを追加してください */
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #f1f1f1;
+  background-color: #2E492F;
+  border: 1px solid #2E492F;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button[name="send"]:hover {
+  background-color: #2E492F;
+}
+

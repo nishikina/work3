@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#94937A ;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #94937a; /* ヘッダーの背景色 */
+    color: #f1f1f1;
+    
+}
+
+.logo img {
+    height: 50px; /* ロゴの高さ */
+}
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#2E492F ;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.large-button {
+    display: inline-block;
+    width: 400px; /* ボタンの幅 */
+    height: 200px; /* ボタンの高さ */
+    background-color: #2E492F;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 48px; /* テキストの大きさ */
+    line-height: 200px; /* テキストの中央揃え */
+    margin: 20px; /* ボタン間の余白 */
+    border-radius: 10px;
+}
+
+.large-button:hover {
+    background-color: #2E492F;
+}
+
+.button-container {
+    text-align: center;
+}

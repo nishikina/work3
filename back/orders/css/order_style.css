@@ -1,0 +1,14 @@
+.cancelled_flag {
+    background-color: #f2f2f2; /* グレーアウトの背景色 */
+    color: #999; /* グレーアウトのテキスト色 */
+    text-decoration: line-through; /* テキストの打ち消し線 */
+}
+
+.uncancel-btn {
+    display: none;
+}
+
+.product-image {
+    height: 200px;
+    width: auto;
+}

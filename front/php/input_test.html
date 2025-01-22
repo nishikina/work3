@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>注文ボタン</title>
+    <!-- jQuery ライブラリの読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- ユーザー情報の入力 -->
+    <div>
+        <label for="user_id">User ID:</label>
+        <input type="text" id="user_id" name="user_id">
+    </div>
+
+    <div>
+        <label for="user_name">User Name:</label>
+        <input type="text" id="user_name" name="user_name">
+    </div>
+
+    <div>
+        <label for="user_address">User Address:</label>
+        <input type="text" id="user_address" name="user_address">
+    </div>
+
+    <!-- 商品情報の入力 -->
+    <div>
+        <h2>Product Information:</h2>
+        <div>
+            <label for="pr_id1">Product ID 1:</label>
+            <input type="text" id="pr_id1" name="pr_id1">
+            <label for="quantity1">Quantity 1:</label>
+            <input type="text" id="quantity1" name="quantity1">
+        </div>
+
+        <div>
+            <label for="pr_id2">Product ID 2:</label>
+            <input type="text" id="pr_id2" name="pr_id2">
+            <label for="quantity2">Quantity 2:</label>
+            <input type="text" id="quantity2" name="quantity2">
+        </div>
+
+        <div>
+            <label for="pr_id3">Product ID 3:</label>
+            <input type="text" id="pr_id3" name="pr_id3">
+            <label for="quantity3">Quantity 3:</label>
+            <input type="text" id="quantity3" name="quantity3">
+        </div>
+
+        <div>
+            <label for="pr_id4">Product ID 4:</label>
+            <input type="text" id="pr_id4" name="pr_id4">
+            <label for="quantity4">Quantity 4:</label>
+            <input type="text" id="quantity4" name="quantity4">
+        </div>
+
+        <div>
+            <label for="pr_id5">Product ID 5:</label>
+            <input type="text" id="pr_id5" name="pr_id5">
+            <label for="quantity5">Quantity 5:</label>
+            <input type="text" id="quantity5" name="quantity5">
+        </div>
+    </div>
+
+    <!-- 注文ボタン -->
+    <button id="orderButton">注文する</button>
+
+    <!-- JavaScript -->
+    <script>
+        $(function(){
+            // 注文ボタンがクリックされたときの処理
+            $('#orderButton').click(function(){
+                // ユーザー情報の入力値を取得
+                var user_id = document.getElementById('user_id').value;
+                var user_name = document.getElementById('user_name').value;
+                var user_address = document.getElementById('user_address').value;
+
+                // 商品情報の入力値を取得
+                var products = [];
+                for (var i = 1; i <= 5; i++) {
+                    var pr_id = document.getElementById('pr_id' + i).value;
+                    var quantity = document.getElementById('quantity' + i).value;
+                    if (pr_id && quantity) { // 商品IDと数量が入力されている場合のみ追加
+                        products.push({pr_id: pr_id, quantity: quantity});
+                    }
+                }
+
+                // ユーザー情報と商品情報をオブジェクトに格納
+                var data = {
+                    user_id: user_id,
+                    user_name: user_name,
+                    user_address: user_address,
+                    products: products
+                };
+
+                // AJAXリクエストを送信
+                $.ajax({
+                    url: 'purchase_handler.php',
+                    type: 'POST',
+                    data: data,
+                    dataType: 'text',
+                    success: function(response){
+                        // 成功時の処理
+                        alert(response);
+                        // 入力フィールドをクリア
+                        document.getElementById('user_name').value = '';
+                        document.getElementById('user_address').value = '';
+                        for (var i = 1; i <= 5; i++) {
+                            document.getElementById('pr_id' + i).value = '';
+                            document.getElementById('quantity' + i).value = '';
+                        }
+                    },
+                    error: function(xhr, status, error){
+                        // エラー時の処理
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

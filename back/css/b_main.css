@@ -1,0 +1,305 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2e492f;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    text-decoration-color:#2e492f
+
+    }
+
+h2 {
+        text-align: left;
+        font-size: 40px;
+    }
+h3 {
+        text-align: left;
+    }
+div {
+    border-radius: 5px;  
+ }
+
+/*▼ログイン画面*/
+
+.loginform {
+    background-color: #f0f0f0;
+    margin: 100px 200px 100px 400px;
+    padding: 10px;
+    height: 600px;
+    width: 600px;
+}
+
+.login{
+    margin: 10px 185px ;
+}
+
+.loginlabel {
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+input {
+    padding: 8px 35px;
+    border: 1.5;
+    border-color: #94937a;
+    border-radius: 3px;
+    background-color: #f1f1ff;
+}
+
+.loginbtn {
+    background-color: #94937a;
+}
+
+/*▲ログイン画面*/
+
+/*▼管理画面*/
+
+.b_top {
+    background-color: #f0f0f0;
+    margin: 100px;
+    padding: 10px;
+    height: auto;
+    width: 85%;
+}
+.b_tittle {
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
+        background-color: #f1f1f1;
+        max-width: 100%;
+        height: auto;
+        margin: 10px 0px;
+        padding: 0px 30px;
+
+}
+
+
+
+.b_user img {
+height: 100px;
+width: auto;
+}
+
+.bmenu {
+    display: flex;
+    justify-content: space-around;
+    align-items:flex-start
+}
+
+
+.bmenu_detail {
+    background-color: #94937a;
+    margin: 10px;
+    height: 300px;
+    width: 300px;
+    font-size: large;     
+}
+
+.bmenu img{
+    padding: 20px;
+    height: 150px;
+    width: auto;
+
+}
+.binfo {
+    display: flex;
+    justify-content: space-around;
+    background-color: #94937a;
+    margin: 10px;
+    height: 300px;
+    width: auto;
+}
+
+.date_detail {
+   font-size: small;
+}
+
+ul {
+    text-align: left;
+}
+
+/* styles.css */
+.analysis_table-style {
+    border-collapse: collapse; /* セルのボーダーを重ねる */
+    width: 100%; /* テーブルの幅を100%にする */
+}
+
+.analysis_table-style th, .analysis_table-style td {
+    border: 1px solid; /* ボーダーのスタイルを指定 */
+    padding: 8px; /* セル内の余白を指定 */
+    text-align: left; /* テキストの位置を左寄せにする */
+}
+
+.analysis_table-style tr:nth-child(even) {
+    background-color: #f2f2f2; /* 偶数行の背景色を指定 */
+}
+
+/*▲管理画面*/
+
+/*▼商品一覧画面*/
+
+.b_pr_top {
+    background-color:#94937a;
+    margin: 100px;
+    padding: 10px;
+    height: auto;
+    width: 85%;
+
+}
+
+.pr_tittle {
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px 30px;
+}
+
+.b_user img {
+    height: 50px;
+    width: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.sarchform {
+    text-align: left;
+    background-color: #f1f1f1;
+    width: 35%;
+    height: auto;
+    margin: 10px;
+    padding: 15px;
+}
+
+.sarchlabel {
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+select {
+    /* スタイルをここに追加 */
+    background-color: #fff;
+    border: 1px solid #94937a;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;  
+
+}
+
+input[type="text"] {
+    /* スタイルをここに追加 */
+    width: 200px; /* 幅 */
+    padding: 5px; /* 内側の余白 */
+    border: 1px solid #94937a; /* ボーダー */
+    font-size: 16px; /* フォントサイズ */
+    background-color: #fff;
+}
+input[type="submit"] {
+    background-color: #94937a; /* ボタンの背景色 */
+    color: white; /* ボタンのテキスト色 */
+}
+
+.sarchbtn{
+    margin-top: 20px;
+    
+}
+
+.pr_table {
+    background-color: #f1f1f1;
+    width: 70%;
+    height: auto;
+    margin: 10px;
+    padding: 15px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+/* 更新ボタン */
+#updateButton {
+    background-color: #4CAF50; /* ボタンの背景色 */
+    color: white; /* ボタンのテキスト色 */
+    padding: 15px 20px; /* ボタン内の余白 */
+    border: none; /* ボタンの境界線なし */
+    border-radius: 4px; /* ボタンの角丸 */
+    cursor: pointer; /* マウスをホバーしたときのカーソルスタイル */
+    margin-right: 10px; /* ボタンの右マージン */
+}
+
+/* 更新ボタンのホバースタイル */
+#updateButton:hover {
+    background-color: #45a049; /* ボタンの背景色（ホバー時） */
+}
+
+/* 閉じるボタン */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.closeModal2 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold; 
+}
+/*▲商品一覧画面*/
+
+button {
+    /* 共通のスタイル */
+    padding: 10px 20px; /* パディング */
+    border: 1px; /* ボーダー */
+   background-color: #94937a;
+   margin: 5px;
+}
+
+/*▼注文一覧画面*/
+.cancelled_flag {
+    background-color: #f1f1f1; /* グレーアウトの背景色 */
+    color: #94937a; /* グレーアウトのテキスト色 */
+    text-decoration: line-through; /* テキストの打ち消し線 */
+}
+
+.uncancel-btn {
+    display: none;
+}
+
+.product-image {
+    height: 200px;
+    width: auto;
+}
+

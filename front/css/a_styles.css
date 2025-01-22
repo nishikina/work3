@@ -1,0 +1,498 @@
+@charset "utf-8";
+/************************
+* 初期設定
+************************/
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color:#94937A ;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing : 0.04em;
+  -webkit-font-smoothing: antialiased;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+*{
+  padding: 8px;
+}
+a{
+  display: block;
+  text-decoration: none;
+}
+img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/*******************
+* header footer
+*******************/
+
+.header{
+  position: fixed;
+  top:0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 1;
+  padding: 10px 20px;
+  background: rgba(148, 147, 122, 0.95);
+}
+
+@media screen and (max-width:768px){
+  .header {
+    padding: 20px 0 20px;
+    justify-content: center;
+  }
+}
+
+.header__navi {
+  display: flex;
+  align-items: center; /* アイテムを垂直方向に中央揃え */
+}
+.header__navi li:not(:last-child) {
+  margin-right: 14px;
+}
+.header__navi li a {
+  color: #f1f1f1;
+  font-size: 20px;
+  position: relative; /* 相対位置指定 */
+}
+.header__navi li a img {
+  max-width: 40px; /* アイコンの幅を調整 */
+}
+
+.header__logo {
+  display: flex;
+}
+@media screen and (max-width:768px){
+  .header__logo {
+    margin-right: 50px; /* ロゴとナビゲーションの間に10pxのマージンを追加 */
+  }
+}
+
+.header__logo li {
+  width: 120px;
+  height:120px;
+  display: block;
+  /*width: 100%;
+  max-width: 100%;*/
+  height: auto;
+}
+
+.slogan{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  color: #fff;
+  background: url(../item/slide1.jpg) center/cover no-repeat;
+}
+.slogan h1 {
+    font-size: 2.5em;
+  /*width: 150px;*/
+}
+
+.footer {
+  background-color: #2E492F;
+}
+.footer__inner {
+  width: 80%;
+  margin: auto;
+  padding: 50px 0;
+}
+
+.footer__inner-sns{
+  border-top: 1px solid #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+}
+.footer__inner-sns ul {
+  display: flex;
+}
+.footer__inner-sns ul li {
+  width: 40px;
+  height: 40px;
+}
+.copyright {
+  color: #f1f1f1;
+  font-size: 12px;
+}
+
+
+
+/*******************
+* ACCESS
+*******************/
+.access {
+  background: #f1f1f1;
+  padding: 100px 0;
+}
+@media screen and (max-width:768px){
+  .access {
+    padding: 50px 0;
+  }
+}
+.access__title {
+  font-size: 24px;
+  text-align: center;
+}
+.access__map {
+  margin-top: 50px;
+}
+.access__map iframe {
+  width: 100%;
+}
+.access__detail {
+  width: 50%;
+  margin: 0 auto;
+  margin: 40px auto 0;
+}
+@media screen and (max-width:768px){
+  .access__detail {
+    width: 80%;
+  }
+}
+.access__detail dl {
+  display: flex;
+}
+@media screen and (max-width:768px){
+  .access__detail dl {
+    flex-direction: column;
+  }
+}
+.access__detail dl:not(:first-child) {
+  margin-top: 30px;
+}
+@media screen and (max-width:768px){
+  .access__detail dl:not(:first-child) {
+    margin-top: 40px;
+  }
+}
+.access__detail dl dt {
+  flex: 1;
+  font-size: 14px;
+}
+@media screen and (max-width:768px){
+  .access__detail dl dt {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+}
+.access__detail dl dd {
+  flex: 2;
+  font-size: 14px;
+}
+.access__detail dl dd div:not(:first-child) {
+  margin-top: 10px;
+}
+
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* 商品を左寄せに配置する */
+  /*margin-right: -10px; .product同士の隙間を開けるためにマイナスのmarginを設定 */
+  margin: 0 0 0 40px;
+}
+
+.product {
+  border-radius: 5px;
+  width: calc(25% - 15px); /* 商品の横幅を25%に設定し、マージンを考慮して調整 */
+  margin-bottom: 20px;
+  text-align: center;
+  margin-right: 10px; /* 右側の余白を設定 */
+  background-color: #f1f1f1;
+  padding: 10px; /* 内側の余白を追加 */
+}
+
+@media screen and (max-width: 768px) {
+  #products .product {
+    width: calc(50% - 20px); /* 画面幅に合わせて商品を1列にする */
+    margin-right:10px; /* 右側のマージンを0に設定 */
+    margin-bottom: 20px; /* 下のマージンを追加 */
+  }
+}
+
+.product h3,
+.product p {
+    margin-bottom: 10px; /* テキストと次の要素の間に10pxのマージンを追加 */
+    line-height: 1.5; /* テキストの行間を1.5倍に設定 */
+}
+
+
+.product img {
+  max-width:200px; /* 例えば200pxに設定 */
+  max-height: 200px; /* 例えば200pxに設定 */
+  padding: 10px;
+  margin: 0 auto; /* 画像を水平方向に中央に配置 */
+  
+}
+
+.product img:hover {
+  cursor: pointer; /* マウスオーバー時にカーソルを指に変更 */
+}
+
+button {
+  background-color: #2E492F;
+  color: #f1f1f1;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #2E492F;
+}
+
+
+.cartItemCount {
+  position: absolute; /* 絶対位置指定 */
+  top: -15px; /* 上方向に少し移動 */
+  right: -15px; /* 右方向に少し移動 */
+  display: inline-block;
+  background-color: #FF5733; /* 背景色 */
+  color: white; /* 文字色 */
+  font-size: 0.8rem; /* 文字サイズ */
+  width: 20px; /* 幅 */
+  height: 20px; /* 高さ */
+  line-height: 20px; /* 行の高さ */
+  border-radius: 50%; /* 円形にする */
+  text-align: center; /* 文字を中央揃え */
+}
+
+/* モーダルのコンテンツ */
+.modal-content, .product-modal-content {
+  position: relative; /* 閉じるボタンを含む親要素の位置を相対指定 */
+}
+
+/* 閉じるボタン */
+.close {
+  position: absolute; /* 閉じるボタンの位置を絶対指定 */
+  top: 10px; /* 上からの位置 */
+  right: 10px; /* 右からの位置 */
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* モーダル */
+.modal {
+  display: none; /* 初期状態では非表示 */
+  position: fixed;
+  z-index: 1; /* 最上位レイヤーに配置 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* コンテンツがモーダルの範囲外になった場合にスクロールバーを表示 */
+  background-color: rgba(0,0,0,0.4); /* 透明度を設定して背景を暗くする */
+}
+
+/* モーダルのコンテンツ */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* モーダルが画面の中央に表示されるように調整 */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* モーダルの幅 */
+  text-align: center; /* テキストを中央揃えにする */
+  border-radius: 10px;
+}
+
+.cart-title {
+  font-size: 24px; /* お買い物カートの文字のサイズを大きくする */
+}
+
+/* 商品詳細用モーダル */
+.product_modal {
+  display: none; /* 初期状態では非表示にする */
+  position: fixed; /* モーダルを固定位置に配置 */
+  z-index: 9999; /* モーダルを他の要素の上に表示 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* スクロールバーを表示する */
+  background-color: rgba(0, 0, 0, 0.4); /* モーダルの背景を半透明にする */
+}
+
+/* モーダルのコンテンツ */
+.product-modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 上下中央に配置 */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* コンテンツの幅を広げる */
+  max-width: 800px; /* コンテンツの最大幅 */
+  height: auto; /* 高さはコンテンツに応じて自動調整 */
+  border-radius: 10px;
+  display: flex; /* Flexboxを使用して左右に並べる */
+  flex-wrap: wrap; /* 必要に応じて折り返す */
+  justify-content: center; /* 水平方向（左右）に中央揃え */
+  align-items: center; /* 垂直方向（上下）に中央揃え */
+}
+
+/* 商品の追加画像 */
+.product-images {
+  width: 300px;
+  margin: 0 30px 0 0; /* 右側に20pxのマージンを追加 */
+  display: flex; /* 画像を横並びにする */
+  justify-content: center;
+  align-items: center; /* 縦方向に中央揃え */
+  flex-direction: column; /* 画像を縦方向に並べる */
+}
+
+.product-images img {
+  width: auto; /* 画像の幅を設定 */
+  max-width: 100%;
+  max-height: 200px;
+  height: auto; /* 高さは自動調整 */
+  margin: 10px 0; /* 画像間の間隔を設定 */
+  object-fit: contain; /* 画像の縦横比を維持しながらコンテナに収める */
+}
+
+.slider {
+  width: calc(100% - 320px); /* スライダーの幅を調整 */
+  margin: 20px 0; /* 上下の余白を調整 */
+}
+
+.slick-slide {
+  margin: 0 10px; /* スライド間の余白を10pxに設定 */
+  transition: all ease-in-out .3s;
+  opacity: .2;
+}
+
+.slick-slide img {
+  width: 100%; /* 画像の幅を100%に設定 */
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black; /* ナビゲーションボタンの色を黒に設定 */
+}
+
+.slick-prev {
+  left: -25px; /* 左のナビゲーションボタンの位置を画像の近くに調整 */
+  z-index: 2; /* ナビゲーションボタンが他の要素の上に表示されるようにする */
+}
+
+.slick-next {
+  right: -25px; /* 右のナビゲーションボタンの位置を画像の近くに調整 */
+  z-index: 2; /* ナビゲーションボタンが他の要素の上に表示されるようにする */
+}
+
+.slick-active {
+  opacity: .5; /* アクティブなスライドの透明度を設定 */
+}
+
+.slick-current {
+  opacity: 1; /* 現在表示されているスライドの透明度を設定 */
+}
+/* 商品詳細と価格のスタイル */
+.product-details {
+  width: 50%;
+  padding: 20px;
+  text-align: left; /* テキストを左揃えにする */
+}
+
+.product-details h2 {
+  margin-top: 0; /* 余白を調整 */
+}
+
+.product-details p {
+  margin: 10px 0; /* 余白を調整 */
+}
+
+.quantity-input {
+  width: 60px; /* 幅を調整する */
+  margin-right: 10px; /* ボタンとの間に適切なマージンを設定 */
+}
+
+.add-to-cart-btn {
+  margin-left: 10px; /* 個数入力フォームとの間に適切なマージンを設定 */
+}
+/* フォーム全体のスタイル */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* セレクトボックス間の余白を設定 */
+  margin-left: 40px; /* 左側の余白を設定して位置を調整 */
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    justify-content: center; /* セレクトボックスを中央揃え */
+  }
+}
+/* セレクトボックスのスタイル */
+form select {
+  width: 200px; 
+  background-color: #f1f1f1;
+  border: 2px solid #2E492F;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  appearance: none; /* デフォルトの矢印を非表示 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('../item/arrow.png'); /* カスタムの矢印画像 */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 10px; /* セレクトボックスの下に余白を追加 */
+}
+
+form select:hover {
+  border-color: #1e90ff;
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.2);
+}
+
+form select:focus {
+  border-color: #1e90ff;
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
+  outline: none;
+}
+
+
+
+form input[type="submit"] {
+  background-color: #2E492F;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #f1f1f1;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 10px; /* セレクトボックスの下に余白を追加 */
+}
+
+form input[type="submit"]:hover {
+  background-color: #1e90ff;
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.2);
+}
+
+form input[type="submit"]:focus {
+  background-color: #1e90ff;
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
+  outline: none;
+}
